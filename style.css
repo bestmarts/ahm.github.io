@@ -1,0 +1,83 @@
+body {
+  /* background-image: url("background.jpg"); */
+  /* font-family: Arial, sans-serif; */
+
+  /* Set background image */
+  background-image: url('background.jpg');
+
+  /* Set background size */
+  background-size: cover; /*You can also use 'contain' or specify a size in pixels or other units*/
+  
+  /* Set background repeat behavior */
+  background-repeat: no-repeat;
+
+  /* Set background position */
+  background-position: center; /* You can adjust this to 'top', 'bottom', 'left', 'right', etc. */
+
+}
+
+header {
+  background-color: #4285f4;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li a {
+  display: block;
+  padding: 10px;
+  color: #0b0b0b;
+  text-decoration: none;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.featured-products {
+  margin: 20px 0;
+}
+
+.featured-products h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.product-card {
+  width: 25%;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  margin: 25px;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.product-card h3 {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+footer {
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+}
